@@ -1,0 +1,97 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ff8241, #ff5034);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.btn, .appt-btn {
+  background-color: #001c3a;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  width: 150px; /* Set a fixed width for all buttons */
+  text-align: center; /* Center the text */
+}
+
+.btn {
+  background-color: #001c3a;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.appt-btn {
+  background-color: #1976D2;
+}
+
+.appt-btn:hover {
+  background-color: #0056b3;
+}
+
+.app-btn-container, .btn-container {
+  flex: 1; 
+  display: flex;
+  justify-content: flex-start; 
+}
+
+.app-btn-container button, .btn-container button {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+.schedule-btn-container {
+  display: flex;
+  width: 100%
+}
+
+.invisible {
+  visibility: hidden; /* Use !important to override inline styles */
+}
