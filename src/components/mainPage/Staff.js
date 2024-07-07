@@ -23,7 +23,7 @@ const Staff = () => {
       try {
         let userId = sessionStorage.getItem('user');
 
-        const usersResponse = await axios.get("https://mediflow-cse416.onrender.com/users", {
+        const usersResponse = await axios.get("https://mediflowserver.onrender.com/users", {
           headers: {
             'Authorization': 'Bearer ' + sessionStorage.getItem('token')
           }
@@ -37,7 +37,7 @@ const Staff = () => {
 
         setUsers(usersWithStatus);
 
-        const userResponse = await axios.get(`https://mediflow-cse416.onrender.com/userID/${userId}`, {
+        const userResponse = await axios.get(`https://mediflowserver.onrender.com/userID/${userId}`, {
           headers: {
             'Authorization': 'Bearer ' + sessionStorage.getItem('token')
           }
@@ -162,7 +162,7 @@ const Staff = () => {
               <Box textAlign="center">
                 <Avatar
                   alt={staff.name}
-                  src={`https://mediflow-cse416.onrender.com/uploads/${staff.profilePic.split('/').pop()}`}
+                  src={`https://mediflowserver.onrender.com/uploads/${staff.profilePic.split('/').pop()}`}
                   style={{ width: "7vh", height: "7vh", margin: "0 auto" }}
                 />
                 <Typography>{staff.name}</Typography>

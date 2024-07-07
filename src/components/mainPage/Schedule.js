@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogTitle, DialogContent, List, ListItem, ListItemText } from '@mui/material';
 import axios from 'axios';
 import moment from 'moment-timezone';
-import { useData } from "../DataContext";
+
 
 export default function Schedule() {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -20,7 +20,6 @@ export default function Schedule() {
   const [proceduresList, setProceduresList] = useState([]);
   const [fullCalendar, setFullCalendar] = useState([]);
   const [currentView, setCurrentView] = useState('timeGridWeek');
-  const { isAdmin } = useData();
   const [pending, setPending] = useState(0);
   const navigate = useNavigate();
 
@@ -50,31 +49,31 @@ export default function Schedule() {
   useEffect(() => {
     let userId = sessionStorage.getItem('user');
 
-    axios.get('https://mediflow-cse416.onrender.com/appointments', {
+    axios.get('https://mediflowserver.onrender.com/appointments', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => setAppointmentList(res.data));
 
-    axios.get(`https://mediflow-cse416.onrender.com/userAppointments/${userId}`, {
+    axios.get(`https://mediflowserver.onrender.com/userAppointments/${userId}`, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => setUserAppointments(res.data.appointments));
 
-    axios.get('https://mediflow-cse416.onrender.com/users', {
+    axios.get('https://mediflowserver.onrender.com/users', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => { setUsersList(res.data) });
 
-    axios.get('https://mediflow-cse416.onrender.com/procedures', {
+    axios.get('https://mediflowserver.onrender.com/procedures', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => { setProceduresList(res.data) });
 
-    axios.get('https://mediflow-cse416.onrender.com/rooms', {
+    axios.get('https://mediflowserver.onrender.com/rooms', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
@@ -83,7 +82,7 @@ export default function Schedule() {
   }, []);
   const fetchAppointments = async () => {
     const response = await axios.get(
-      "https://mediflow-cse416.onrender.com/appointments/pending",
+      "https://mediflowserver.onrender.com/appointments/pending",
       {
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("token"),

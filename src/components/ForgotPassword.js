@@ -12,7 +12,7 @@ export default function ForgotPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://mediflow-cse416.onrender.com/forgot-password', { email });
+      await axios.post('https://mediflowserver.onrender.com/forgot-password', { email });
       alert('Password reset link sent!');
       navigate("/login")
     } catch (err) {

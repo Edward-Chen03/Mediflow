@@ -24,7 +24,7 @@ export default function AdminAppointmentView() {
 
   useEffect(() => {
     axios
-      .get("https://mediflow-cse416.onrender.com/appointments", {
+      .get("https://mediflowserver.onrender.com/appointments", {
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("token"),
         },
@@ -32,7 +32,7 @@ export default function AdminAppointmentView() {
       .then((res) => setAppointments(res.data));
 
     axios
-      .get("https://mediflow-cse416.onrender.com/users", {
+      .get("https://mediflowserver.onrender.com/users", {
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("token"),
         },
@@ -42,7 +42,7 @@ export default function AdminAppointmentView() {
       });
 
     axios
-      .get("https://mediflow-cse416.onrender.com/procedures", {
+      .get("https://mediflowserver.onrender.com/procedures", {
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("token"),
         },
@@ -52,7 +52,7 @@ export default function AdminAppointmentView() {
       });
 
     axios
-      .get("https://mediflow-cse416.onrender.com/processes", {
+      .get("https://mediflowserver.onrender.com/processes", {
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("token"),
         },
@@ -60,7 +60,7 @@ export default function AdminAppointmentView() {
       .then((res) => setProcessList(res.data));
 
     axios
-      .get("https://mediflow-cse416.onrender.com/rooms", {
+      .get("https://mediflowserver.onrender.com/rooms", {
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("token"),
         },
@@ -119,7 +119,7 @@ export default function AdminAppointmentView() {
 
   const fetchAppointments = async () => {
     const response = await axios.get(
-      "https://mediflow-cse416.onrender.com/appointments/pending",
+      "https://mediflowserver.onrender.com/appointments/pending",
       {
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("token"),
@@ -132,7 +132,7 @@ export default function AdminAppointmentView() {
 
   const handleUpdateStatus = async (appointmentId, newStatus) => {
     await axios.put(
-      `https://mediflow-cse416.onrender.com/updateAppointmentStatus`,
+      `https://mediflowserver.onrender.com/updateAppointmentStatus`,
       { appointmentId: appointmentId, status: newStatus },
       {
         headers: {

@@ -20,7 +20,7 @@ export default function LoginPage() {
         document.getElementById('loginError').innerHTML = 'Invalid Input';
       } else {
         document.getElementById('loginError').innerHTML = 'Processing, This may take up to 10 minutes';
-        axios.post("https://mediflow-cse416.onrender.com/login", { username, password }, { withCredentials: true })
+        axios.post("https://mediflowserver.onrender.com/login", { username, password }, { withCredentials: true })
           .then(res => {
             if (res.data.success) {
               sessionStorage.setItem('token', res.data.token);

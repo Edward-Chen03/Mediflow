@@ -23,7 +23,7 @@ const AddRoom = () => {
   // DB API
 
   useEffect(() => {
-    axios.get('https://mediflow-cse416.onrender.com/rooms', {
+    axios.get('https://mediflowserver.onrender.com/rooms', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
@@ -41,7 +41,7 @@ const AddRoom = () => {
       return;
     }
 
-    await axios.post("https://mediflow-cse416.onrender.com/createRoom", {
+    await axios.post("https://mediflowserver.onrender.com/createRoom", {
       name: roomNumber,
       type: roomType,
       status: "Open"

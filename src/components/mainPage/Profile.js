@@ -98,7 +98,7 @@ function Profile() {
       const userId = sessionStorage.getItem("user");
 
       const response = await axios.post(
-        `https://mediflow-cse416.onrender.com/profile-upload/${userId}`,
+        `https://mediflowserver.onrender.com/profile-upload/${userId}`,
         formData,
         {
           headers: {
@@ -121,7 +121,7 @@ function Profile() {
     const fetchUser = async () => {
       const userId = sessionStorage.getItem("user");
       const userResponse = await axios.get(
-        `https://mediflow-cse416.onrender.com/userID/${userId}`,
+        `https://mediflowserver.onrender.com/userID/${userId}`,
         {
           headers: {
             Authorization: "Bearer " + sessionStorage.getItem("token"),
@@ -135,7 +135,7 @@ function Profile() {
     const fetchAppointments = async () => {
       const userId = sessionStorage.getItem("user");
       const response = await axios.get(
-        `https://mediflow-cse416.onrender.com/profileappt`,
+        `https://mediflowserver.onrender.com/profileappt`,
         {
           headers: {
             Authorization: "Bearer " + sessionStorage.getItem("token"),
@@ -201,7 +201,7 @@ function Profile() {
           <CardContent>
             <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
               <Avatar
-                src={`https://mediflow-cse416.onrender.com/uploads/${sessionStorage.getItem(
+                src={`https://mediflowserver.onrender.com/uploads/${sessionStorage.getItem(
                   "pfp"
                 )}`}
                 sx={{ width: 80, height: 80, mr: 2 }}
@@ -251,7 +251,7 @@ function Profile() {
               Edit Profile
             </Typography>
             <Avatar
-              src={`https://mediflow-cse416.onrender.com/uploads/${sessionStorage.getItem(
+              src={`https://mediflowserver.onrender.com/uploads/${sessionStorage.getItem(
                 "pfp"
               )}`}
               sx={{ width: 90, height: 90, mb: 2 }}

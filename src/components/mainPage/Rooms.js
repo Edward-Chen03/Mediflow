@@ -25,7 +25,7 @@ function Rooms() {
   
   // DB API
   const api = axios.create({
-    baseURL: "https://mediflow-cse416.onrender.com",
+    baseURL: "https://mediflowserver.onrender.com",
   });
 
   // Add an interceptor to add Authorization header to each request

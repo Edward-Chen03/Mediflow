@@ -36,7 +36,7 @@ import PendingAppointment from "./mainPage/AdminAppointmentView";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { initializeSocket, disconnectSocket, getSocket } from "./socket";
-import { DataProvider } from "./DataContext";
+
 
 // Mock array of upcoming patients
 // const upcomingPatients = [
@@ -202,7 +202,7 @@ export default function MainPage() {
   };
 
   return (
-    <DataProvider>
+   
       <Box
         sx={{
           display: "flex",
@@ -411,7 +411,7 @@ export default function MainPage() {
               {`${sessionStorage.getItem("name")}`}
             </Typography>
             <Avatar
-              src={`https://mediflow-cse416.onrender.com/uploads/${sessionStorage.getItem(
+              src={`https://mediflowserver.onrender.com/uploads/${sessionStorage.getItem(
                 "pfp"
               )}`}
               component={Link}
@@ -428,6 +428,6 @@ export default function MainPage() {
           onClose={() => setIsModalOpen(false)}
         />
       </Box>
-    </DataProvider>
+   
   );
 }

@@ -26,43 +26,43 @@ export default function RequestAppointment() {
 
   useEffect(() => {
 
-    axios.get('https://mediflow-cse416.onrender.com/users', {
+    axios.get('https://mediflowserver.onrender.com/users', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => { setUsersList(res.data) });
 
-    axios.get('https://mediflow-cse416.onrender.com/rooms', {
+    axios.get('https://mediflowserver.onrender.com/rooms', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => { setRooms(res.data) }).then(console.log('found rooms'));
 
-    axios.get('https://mediflow-cse416.onrender.com/processes', {
+    axios.get('https://mediflowserver.onrender.com/processes', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => { setProcessList(res.data) });
 
-    axios.get('https://mediflow-cse416.onrender.com/procedures', {
+    axios.get('https://mediflowserver.onrender.com/procedures', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => { setProcedureList(res.data) });
 
-    axios.get('https://mediflow-cse416.onrender.com/equipment', {
+    axios.get('https://mediflowserver.onrender.com/equipment', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => { setEquipmentList(res.data) });
 
-    axios.get('https://mediflow-cse416.onrender.com/equipmentHead', {
+    axios.get('https://mediflowserver.onrender.com/equipmentHead', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => { setEquipmentHeadList(res.data) });
 
-    axios.get('https://mediflow-cse416.onrender.com/appointments', {
+    axios.get('https://mediflowserver.onrender.com/appointments', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }

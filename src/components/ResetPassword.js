@@ -12,7 +12,7 @@ export default function ResetPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`https://mediflow-cse416.onrender.com/reset/${token}`, { password });
+      await axios.post(`https://mediflowserver.onrender.com/reset/${token}`, { password });
       alert('Password has been reset');
       navigate("/login")
 

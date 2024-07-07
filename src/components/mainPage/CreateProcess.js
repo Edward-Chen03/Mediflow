@@ -37,7 +37,7 @@ function CreateProcess() {
 
     const proceduresToAdd = await Promise.all(sections.map(section =>
 
-      axios.post("https://mediflow-cse416.onrender.com/createProcedure", {
+      axios.post("https://mediflowserver.onrender.com/createProcedure", {
         name: section.name,
         requiredRoomType: section.roomType,
         description: section.description,
@@ -55,7 +55,7 @@ function CreateProcess() {
 
     // adds process
 
-    await axios.post("https://mediflow-cse416.onrender.com/createProcess", {
+    await axios.post("https://mediflowserver.onrender.com/createProcess", {
       name: processName,
       components: proceduresToAdd.map(proc => proc.data)
     }, {

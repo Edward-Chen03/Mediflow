@@ -26,13 +26,13 @@ const AddInventory = () => {
 
   useEffect(() => {
 
-    axios.get('https://mediflow-cse416.onrender.com/equipmentHead', {
+    axios.get('https://mediflowserver.onrender.com/equipmentHead', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(res => { setEquipmentHead(res.data) }).then(console.log('found rooms'));
 
-    axios.get('https://mediflow-cse416.onrender.com/rooms', {
+    axios.get('https://mediflowserver.onrender.com/rooms', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token')
       }
@@ -48,7 +48,7 @@ const AddInventory = () => {
     const equipmentHeadExists = equipmentHeadList.some((object) => object.name === name);
     if (equipmentHeadExists) {
 
-      let newItem = await axios.post("https://mediflow-cse416.onrender.com/createEquipment", {
+      let newItem = await axios.post("https://mediflowserver.onrender.com/createEquipment", {
         location: equipmentLocation,
         name: name,
         type: equipmentCategory,
@@ -59,7 +59,7 @@ const AddInventory = () => {
         }
       }).then(console.log("Added Equipment"));
 
-      await axios.put("https://mediflow-cse416.onrender.com/changeEquipmentHead", {
+      await axios.put("https://mediflowserver.onrender.com/changeEquipmentHead", {
 
         name: name,
         equipment: newItem.data
@@ -73,7 +73,7 @@ const AddInventory = () => {
     }
     else {
 
-      await axios.post("https://mediflow-cse416.onrender.com/createEquipmentHead", {
+      await axios.post("https://mediflowserver.onrender.com/createEquipmentHead", {
 
         name: name,
         type: equipmentCategory
@@ -85,7 +85,7 @@ const AddInventory = () => {
       }).then(console.log("Added Equipment Head"));
 
 
-      let newItem = await axios.post("https://mediflow-cse416.onrender.com/createEquipment", {
+      let newItem = await axios.post("https://mediflowserver.onrender.com/createEquipment", {
         location: equipmentLocation,
         name: name,
         type: equipmentCategory,
@@ -96,7 +96,7 @@ const AddInventory = () => {
         }
       }).then(console.log("Added Equipment"));
 
-      await axios.put("https://mediflow-cse416.onrender.com/changeEquipmentHead", {
+      await axios.put("https://mediflowserver.onrender.com/changeEquipmentHead", {
 
         name: name,
         equipment: newItem.data,

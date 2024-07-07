@@ -51,7 +51,7 @@ const AddStaff = () => {
       }
     }
 
-    axios.post("https://mediflow-cse416.onrender.com/createUser", {
+    axios.post("https://mediflowserver.onrender.com/createUser", {
       admin: isAdmin,
       name: firstName + " " + lastName,
       email: email,

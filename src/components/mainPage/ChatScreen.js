@@ -32,14 +32,14 @@ function ChatScreen() {
       const userIds = roomID.split("-");
       const currentUserID = sessionStorage.getItem('user');
       const otherUserID = userIds.find(id => id !== currentUserID);
-      const response = await axios.get(`https://mediflow-cse416.onrender.com/userID/${otherUserID}`, {
+      const response = await axios.get(`https://mediflowserver.onrender.com/userID/${otherUserID}`, {
                 headers: {
                     'Authorization': 'Bearer ' + sessionStorage.getItem('token')
                 }
             });
       setRecipient(response.data.name);
       } else {
-        const recipient = await axios.get(`https://mediflow-cse416.onrender.com/appointments/${roomID}`, {
+        const recipient = await axios.get(`https://mediflowserver.onrender.com/appointments/${roomID}`, {
           headers: {
               'Authorization': 'Bearer ' + sessionStorage.getItem('token')
           }
@@ -50,7 +50,7 @@ function ChatScreen() {
       try {
             
       
-            const messagesResponse = await axios.get(`https://mediflow-cse416.onrender.com/messages/${roomID}`, {
+            const messagesResponse = await axios.get(`https://mediflowserver.onrender.com/messages/${roomID}`, {
               headers: {
                   'Authorization': 'Bearer ' + sessionStorage.getItem('token')
               }
