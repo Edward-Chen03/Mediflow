@@ -5,13 +5,11 @@
   </a>
 </p>
 
-[Live Demo](https://mediflow-hsr8.onrender.com)
-
 ## Introduction
 
 Mediflow is a flexible web app built to simulate an operational workflow for a medical environment. This includes manage processes such as medical procedures and as well as inventory such as room appointments, equipment statuses, employee schedules, and tasks.
 
-Follow the link above to interact with the website. 
+Click the image above to interact with the website. 
 
 ## Features/Specifications
 
