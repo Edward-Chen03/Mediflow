@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Mediflow is a flexible web app built to simulate an operational workflow for a medical environment. This includes manage processes such as medical procedures and as well as inventory such as room appointments, equipment statuses, employee schedules, and tasks.
+Mediflow is a flexible web app built to sustain a medical environment. It facilitates the management of key processes such as medical procedures, inventory control, and workspace organization. This includes handling pre-operative and post-operative workflows, room scheduling, equipment status tracking, employee scheduling, and individual task management.
 
 Click the image above to interact with the website. 
 
