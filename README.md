@@ -30,7 +30,12 @@ Specifications
 
 If you would like to deploy locally, please download and run npm install in both the root and server directory. Then run node server.js in the server directory and npm start in the root directory.
 
-## Previews
+## What I Learned
 
-[TO BE ADDED]
+- Database Design & Management: Gained experience designing and managing collections in MongoDB Atlas, handling relationships, and optimizing queries for performance.
 
+- Real-Time Systems: Implemented real-time features like live task and chat communication using Socket.IO.
+
+- Cron Jobs: Used Nodecron to automate background tasks like reminders or system checks.
+
+- UI/UX with Material UI: Improved frontend design skills by creating clean, responsive interfaces using Material UI.
